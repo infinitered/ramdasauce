@@ -30,6 +30,8 @@ NOTE: Although this isn't monkey-patching, it makes me feel a bit dirty like it 
 
 # New Functions
 
+Here's the quick list of functions and a simple example.
+
 ```js
 import RS from 'ramda-sauce'
 
@@ -37,15 +39,14 @@ RS.toDate(0)                // a Number to a date Object
 RS.toNumber('5')            // a String to a Number
 RS.within(1, 100, 99)       // is the 3rd party between (inclusive) the 1st 2?
 RS.eqLength([1,2,3], 'abc') // tests 2 things to see if their length properties are the same
+RS.log('x')                 // logs and returns the parameter
+RS.trace('x', 1)            // logs the 1st param and returns the 2nd
 ```
 
-Useful for debugging:
+A few notes about log & trace.
 ```js
 import R from 'ramda'
 import RS from 'ramda-sauce'
-
-RS.log('x') // logs and returns the parameter
-RS.trace('x', 1) // logs the 1st param and returns the 2nd
 
 // NOTE: impure because they write to the console... but
 // check this out:
