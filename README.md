@@ -30,28 +30,30 @@ NOTE: Although this isn't monkey-patching, it makes me feel a bit dirty like it 
 
 # New Functions
 
-Here's a list of what this library contains organized by topic.
-
 ```js
-RS.toDate(0) // a Number to a date Object
-RS.toNumber('5') // a String to a Number
+toDate(0)                // a Number to a date Object
+toNumber('5')            // a String to a Number
+within(1, 100, 99)       // is the 3rd party between (inclusive) the 1st 2?
+eqLength([1,2,3], 'abc') // tests 2 things to see if their length properties are the same
+```
 
-// ------
+Useful for debugging:
+```js
+log('x') // logs and returns the parameter
+trace('x', 1) // logs the 1st param and returns the 2nd
 
-RS.log('x') // logs and returns the parameter
-RS.trace('x', 1) // logs the 1st param and returns the 2nd
+// NOTE: impure because they write to the console... but
+// check this out:
+R.pipe(
+  R.concat('!!')
+  RS.log,  // <-- prints 'HI!!' to your console
+  R.toLower
+)('HI') //=> 'hi!!'
 
-// NOTE: Those functions aren't pure.  They have a side-effect of writing to the console.  Only use these for debugging.
-NOTE: These are great for injecting into `R.pipe` for debugging
-
-// ------
-
-RS.within(1, 100, 99) // is the 3rd party between (inclusive) the 1st 2?
-
-// ------
-
-RS.eqLength([1,2,3], 'abc') // tests 2 things to see if their length properties are the same
-
+R.pipe(
+  RS.trace('here'),  // <-- print 'here' to the console
+  R.toLower
+)('HI') //=> 'hi'
 ```
 
 # Feedback
