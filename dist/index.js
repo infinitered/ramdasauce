@@ -3,6 +3,7 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
+exports.R = undefined;
 
 var _ramda = require('ramda');
 
@@ -57,23 +58,6 @@ var trace = _ramda2.default.curry(function (message, x) {
   console.log(message);
   return x;
 });
-
-/**
- * Converts the parameter to a string.
- *
- * String, null, and undefined will return themselves,
- * whereas everything else will try to be converted to
- * a String.
- *
- * @since v0.1.0
- * @param {Number} the Number to convert
- * @return {String} the String version
- * @example
- * RS.toString(5) //=> '5'
- */
-var toString = _ramda2.default.cond([[_ramda2.default.isNil, _ramda2.default.identity], [_ramda2.default.is(String), _ramda2.default.identity], [_ramda2.default.T, function (x) {
-  return String(x);
-}]]);
 
 /**
  * Converts the parameter to a number.
@@ -135,12 +119,13 @@ var within = _ramda2.default.curry(function (min, max, value) {
 var RamdaSauce = {
   log: log,
   trace: trace,
-  toString: toString,
   toNumber: toNumber,
   toDate: toDate,
   within: within
 };
 
-var index = _ramda2.default.merge(RamdaSauce, _ramda2.default);
+// but, provide a polluted version of ramda for convenience
+var R$1 = _ramda2.default.merge(RamdaSauce, _ramda2.default);
 
-exports.default = index;
+exports.R = R$1;
+exports.default = RamdaSauce;
