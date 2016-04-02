@@ -20,7 +20,7 @@
   },
   "license": "MIT",
   "files": [
-    "lib"
+    "dist/index.js"
   ],
   "dependencies": {
     "ramda": "^0.20.1"
