@@ -5,14 +5,13 @@ Adds a few utilities on the delicious [Ramda.js](http://ramdajs.com/) library.
 
 # Installing
 
-`npm install ramda-sauce`
+`npm install ramda-sauce --save`
 
 
 # Getting Started
 
 RamdaSauce is distributed as an ES5 library, but I'll show you the examples here in ES(6|2015) format.
 
-**normal-example.js**
 ```js
 import RS from 'ramda-sauce'
 ```
@@ -21,14 +20,13 @@ import RS from 'ramda-sauce'
 
 An alternative way if you want to continue to use `R.` is to import RamdaSauce in the dirty way.
 
-**polluted-example.js**
 ```js
 import {R} from 'ramda-sauce'
 ```
 
 The polluted version merges Ramda into RamdaSauce so you can continue to use `R.newThings`.
 
-NOTE: Although this isn't monkeypatching, it makes me feel a bit dirty like it were.  Jury is out on this one.  I'd love to hear some feedback.
+NOTE: Although this isn't monkey-patching, it makes me feel a bit dirty like it were.  Jury is out on this one.  I'd love to hear some feedback.
 
 # New Functions
 
