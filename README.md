@@ -32,24 +32,27 @@ NOTE: Although this isn't monkey-patching, it makes me feel a bit dirty like it 
 
 Here's a list of what this library contains organized by topic.
 
-**Conversions** - from type to type
 ```js
 RS.toDate(0) // a Number to a date Object
 RS.toNumber('5') // a String to a Number
-```
 
-**Logging** - great for injecting into `R.pipe` for debugging
-```js
+// ------
+
 RS.log('x') // logs and returns the parameter
 RS.trace('x', 1) // logs the 1st param and returns the 2nd
-```
-NOTE: Those functions aren't pure.  They have a side-effect of writing to the console.  Only use these for debugging.
 
-**Math And Shit** - things with numbers
-```js
+// NOTE: Those functions aren't pure.  They have a side-effect of writing to the console.  Only use these for debugging.
+NOTE: These are great for injecting into `R.pipe` for debugging
+
+// ------
+
 RS.within(1, 100, 99) // is the 3rd party between (inclusive) the 1st 2?
-```
 
+// ------
+
+RS.eqLength([1,2,3], 'abc') // tests 2 things to see if their length properties are the same
+
+```
 
 # Feedback
 
