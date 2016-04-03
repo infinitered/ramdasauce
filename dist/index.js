@@ -107,12 +107,12 @@ var isNumber = _ramda2.default.is(Number);
  * @param {Number} the value to test
  * @return {Boolean} is the value in the range?
  * @example
- * RS.within(1, 5, 3) //=> true
- * RS.within(1, 5, 1) //=> true
- * RS.within(1, 5, 5) //=> true
- * RS.within(1, 5, 5.1) //=> false
+ * RS.isWithin(1, 5, 3) //=> true
+ * RS.isWithin(1, 5, 1) //=> true
+ * RS.isWithin(1, 5, 5) //=> true
+ * RS.isWithin(1, 5, 5.1) //=> false
  */
-var within = _ramda2.default.curry(function (min, max, value) {
+var isWithin = _ramda2.default.curry(function (min, max, value) {
   return isNumber(min) && isNumber(max) && isNumber(value) && _ramda2.default.gte(value, min) && _ramda2.default.gte(max, value);
 });
 
@@ -201,7 +201,7 @@ var Ramdasauce = {
   trace: trace,
   toNumber: toNumber,
   toDate: toDate,
-  within: within,
+  isWithin: isWithin,
   eqLength: eqLength,
   random: random,
   sample: sample,

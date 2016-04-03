@@ -27,7 +27,7 @@ RS.toNumber('5')            // a String to a Number
 RS.isUndefined(qwerty)      // check if something is undefined
 RS.isNotNil(null)           // check if something is not null or undefined
 RS.isNilOrEmpty(null)       // checks if something is null, undefined or R.isEmpty
-RS.within(1, 2, 2)          // is the 3rd parameter within the range of 1st through 2nd?
+RS.isWithin(1, 2, 2)        // is the 3rd parameter isWithin the range of 1st through 2nd?
 RS.eqLength([1,2,3], 'abc') // tests 2 things to see if their length properties are the same
 
 // --- Impure Randomness ---
