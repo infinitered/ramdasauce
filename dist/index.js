@@ -270,6 +270,34 @@ var dotPath = _ramda2.default.curry(function (stringPath, obj) {
   return _ramda2.default.path(path, obj);
 });
 
+/**
+ * Determines if a string starts with another string.
+ *
+ * @since v0.1.0
+ * @param {startWith} (String) The starting string.
+ * @param {source} (String) The string to test.
+ * @return {Bool} True if the source starts with the first parameter; false otherwise.
+ * @example
+ * RS.startsWith('h', 'hello') //=> true
+ */
+var startsWith = _ramda2.default.curry(function (subString, fullString) {
+  return _ramda2.default.equals(subString, _ramda2.default.take(_ramda2.default.length(subString), fullString));
+});
+
+/**
+ * Determines if a string ends with another string.
+ *
+ * @since v0.1.0
+ * @param {endsWith} (String) The ending string.
+ * @param {source} (String) The string to test.
+ * @return {Bool} True if the source ends with the first parameter; false otherwise.
+ * @example
+ * RS.endsWith('o', 'hello') //=> true
+ */
+var endsWith = _ramda2.default.curry(function (subString, fullString) {
+  return _ramda2.default.equals(subString, _ramda2.default.takeLast(_ramda2.default.length(subString), fullString));
+});
+
 var Ramdasauce = {
   log: log,
   trace: trace,
@@ -285,7 +313,9 @@ var Ramdasauce = {
   isUndefined: isUndefined,
   mapKeys: mapKeys,
   rangeStep: rangeStep,
-  dotPath: dotPath
+  dotPath: dotPath,
+  startsWith: startsWith,
+  endsWith: endsWith
 };
 
 exports.default = Ramdasauce;

@@ -38,6 +38,8 @@ RS.isNilOrEmpty(null)       // checks if something is null, undefined or R.isEmp
 RS.isWithin(1, 2, 2)        // is the 3rd parameter within the range of 1st through 2nd?
 RS.isNotWithin(1, 2, 100)   // is the 3rd parameter not within the range of 1st through 2nd?
 RS.eqLength([1,2,3], 'abc') // tests 2 things to see if their length properties are the same
+RS.startsWith('h', 'hi')    // does a string start with another string?
+RS.endsWith('i', 'hi')      // does a string end with another string?
 
 // --- Impure Randomness ---
 RS.random(68, 70)           // a random number from the min to the max included
