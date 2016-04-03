@@ -39,10 +39,11 @@ RS.toDate(0)                // a Number to a date Object
 RS.toNumber('5')            // a String to a Number
 RS.within(1, 2, 2)          // is the 3rd parameter within the range of 1st through 2nd?
 RS.eqLength([1,2,3], 'abc') // tests 2 things to see if their length properties are the same
-RS.log('x')                 // logs and returns the parameter
-RS.trace('x', 1)            // logs the 1st param and returns the 2nd
+RS.isNilOrEmpty(null)       // checks if something is nil, undefined or R.isEmpty
 RS.random(68, 70)           // a random number from the min to the max included
 RS.sample(['red', 'blue'])  // picks a random item from a list
+RS.log('x')                 // logs and returns the parameter
+RS.trace('x', 1)            // logs the 1st param and returns the 2nd
 ```
 
 A few notes about log & trace.

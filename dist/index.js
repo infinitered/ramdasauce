@@ -161,6 +161,17 @@ var sample = function sample(list) {
   return list[random(min, max)];
 };
 
+/**
+ * Checks if something is null, undefined or R.isEmpty
+ *
+ * @since v0.1.0
+ * @param {*} (*) The thing to check.
+ * @return {Boolean} True if it is null or empty; false otherwise.
+ * @example
+ * RS.isNilOrEmpty() //=> true
+ */
+var isNilOrEmpty = _ramda2.default.anyPass([_ramda2.default.isNil, _ramda2.default.isEmpty]);
+
 var Ramdasauce = {
   log: log,
   trace: trace,
@@ -169,7 +180,8 @@ var Ramdasauce = {
   within: within,
   eqLength: eqLength,
   random: random,
-  sample: sample
+  sample: sample,
+  isNilOrEmpty: isNilOrEmpty
 };
 
 // but, provide a polluted version of ramda for convenience
