@@ -117,6 +117,27 @@ var isWithin = _ramda2.default.curry(function (min, max, value) {
 });
 
 /**
+ * Given a min and max, determines if the value is not
+ * included in the range.
+ *
+ * This function is curried.
+ *
+ * @since v0.1.0
+ * @sig Number a -> a -> a -> a
+ * @param {Number} the minimum number
+ * @param {Number} the maximum number
+ * @param {Number} the value to test
+ * @return {Boolean} True if the value is not included; otherwise false.
+ * @example
+ * RS.isNotWithin(1, 5, 3) //=> false
+ * RS.isNotWithin(1, 5, 1) //=> false
+ * RS.isNotWithin(1, 5, 5) //=> false
+ * RS.isNotWithin(1, 5, 5.1) //=> true
+ */
+// export default R.curry((min, max, value) => R.complement(isWithin(min, max, value)))
+var isNotWithin = _ramda2.default.complement(isWithin);
+
+/**
  * Compares two objects to see if their length
  * properties are the same.
  *
@@ -202,6 +223,7 @@ var Ramdasauce = {
   toNumber: toNumber,
   toDate: toDate,
   isWithin: isWithin,
+  isNotWithin: isNotWithin,
   eqLength: eqLength,
   random: random,
   sample: sample,
