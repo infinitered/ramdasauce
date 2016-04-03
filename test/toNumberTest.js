@@ -1,5 +1,5 @@
 import test from 'ava'
-import RS from '../lib/'
+import RS from '../lib/ramdasauce'
 
 test('toNumber', (t) => {
   t.same(RS.toNumber(null), null)

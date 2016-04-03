@@ -1,5 +1,5 @@
 import test from 'ava'
-import RS from '../lib/'
+import RS from '../lib/ramdasauce'
 
 const is200s = RS.isNotWithin(200, 299)
 

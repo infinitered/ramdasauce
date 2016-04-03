@@ -16,7 +16,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
  * Useful when placed inside pipe or compose to inspect
  * the value as it passes on through.
  *
- * @since v0.1.0
+ * @since v1.0.0
  * @sig * -> *
  * @param {*} the value to log
  * @return {*} the same value passed in
@@ -42,7 +42,7 @@ var log = function log(x) {
  *
  * This function is curried.
  *
- * @since v0.1.0
+ * @since v1.0.0
  * @sig String A -> * -> *
  * @param {String} the message to display in the console
  * @param {*} the value to pass back
@@ -65,7 +65,7 @@ var trace = _ramda2.default.curry(function (message, x) {
  * but everything else will be convert to a Number, or
  * die trying.
  *
- * @since v0.1.0
+ * @since v1.0.0
  * @param {String} the String to convert
  * @return {Number} the Number version
  * @example
@@ -78,7 +78,7 @@ var toNumber = _ramda2.default.cond([[_ramda2.default.isNil, _ramda2.default.ide
 /**
  * Converts the parameter to a Date object.
  *
- * @since v0.1.0
+ * @since v1.0.0
  * @param {Number} number - The number to convert
  * @return {Object} The Date object
  * @example
@@ -99,7 +99,7 @@ var isNumber = _ramda2.default.is(Number);
  *
  * This function is curried.
  *
- * @since v0.1.0
+ * @since v1.0.0
  * @sig Number a -> a -> a -> a
  * @param {Number} the minimum number
  * @param {Number} the maximum number
@@ -121,7 +121,7 @@ var isWithin = _ramda2.default.curry(function (min, max, value) {
  *
  * This function is curried.
  *
- * @since v0.1.0
+ * @since v1.0.0
  * @sig Number a -> a -> a -> a
  * @param {Number} the minimum number
  * @param {Number} the maximum number
@@ -140,7 +140,7 @@ var isNotWithin = _ramda2.default.complement(isWithin);
  * Compares two objects to see if their length
  * properties are the same.
  *
- * @since v0.1.0
+ * @since v1.0.0
  * @param {x} (String|Array|Object) The first thing to compare.
  * @param {y} (String|Array|Object) The 2nd thing to compare.
  * @return {Bool} Wether the objects have the same length.
@@ -153,7 +153,7 @@ var eqLength = _ramda2.default.eqProps('length');
 /**
  * Generates a random number within the min and max range.
  *
- * @since v0.1.0
+ * @since v1.0.0
  * @param {min} (Number) Minimum number to include.
  * @param {max} (Number) Maximum number to include.
  * @return {Number} The random number.
@@ -167,7 +167,7 @@ var random = function random(min, max) {
 /**
  * Given a array, grabs 1 random item out.
  *
- * @since v0.1.0
+ * @since v1.0.0
  * @return {*} A random item in the list.
  * @example
  * RS.sample([8,6,7,5,3,0,9]) //=> Maybe 6?  Maybe 9?  Feel lucky?
@@ -184,7 +184,7 @@ var sample = function sample(list) {
 /**
  * Checks if something is null, undefined or R.isEmpty
  *
- * @since v0.1.0
+ * @since v1.0.0
  * @param {*} (*) The thing to check.
  * @return {Boolean} True if it is null or empty; false otherwise.
  * @example
@@ -195,7 +195,7 @@ var isNilOrEmpty = _ramda2.default.anyPass([_ramda2.default.isNil, _ramda2.defau
 /**
  * Checks if something is not null or undefined.
  *
- * @since v0.1.0
+ * @since v1.0.0
  * @param {*} (*) The thing to check.
  * @return {Boolean} True if it is not nil; false otherwise.
  * @example
@@ -206,7 +206,7 @@ var isNotNil = _ramda2.default.complement(_ramda2.default.isNil);
 /**
  * Checks if something is undefined.
  *
- * @since v0.1.0
+ * @since v1.0.0
  * @param {*} (*) The thing to check.
  * @return {Boolean} True if it is undefined; false otherwise.
  * @example
@@ -219,7 +219,7 @@ var isUndefined = function isUndefined(x) {
 /**
  * Transforms the keys of an object with a function.
  *
- * @since v0.1.0
+ * @since v1.0.0
  * @param {fn} (Function) The function to apply to the keys.
  * @param {obj} (Object) The object to operate on.
  * @return {Object} A new and improved object with SUPER KEYS!!!
@@ -235,7 +235,7 @@ var mapKeys = _ramda2.default.curry(function (fn, obj) {
  *
  * This function is curried.
  *
- * @since v0.1.0
+ * @since v1.0.0
  * @sig Number a -> a -> a -> [a]
  * @param {Number} (step) How much to step by.
  * @param {Number} (start) Where to start.
@@ -257,7 +257,7 @@ var rangeStep = _ramda2.default.curry(function (step, start, stop) {
  * Fishes out a deep property from an object by
  * a string path.
  *
- * @since v0.1.0
+ * @since v1.0.0
  * @param {stringPath} (String) A path with dots in them.
  * @param {y} (Object) The 2nd thing to compare.
  * @return {*} The value found at the path; otherwise undefined
@@ -273,7 +273,7 @@ var dotPath = _ramda2.default.curry(function (stringPath, obj) {
 /**
  * Determines if a string starts with another string.
  *
- * @since v0.1.0
+ * @since v1.0.0
  * @param {startWith} (String) The starting string.
  * @param {source} (String) The string to test.
  * @return {Bool} True if the source starts with the first parameter; false otherwise.
@@ -287,7 +287,7 @@ var startsWith = _ramda2.default.curry(function (subString, fullString) {
 /**
  * Determines if a string ends with another string.
  *
- * @since v0.1.0
+ * @since v1.0.0
  * @param {endsWith} (String) The ending string.
  * @param {source} (String) The string to test.
  * @return {Bool} True if the source ends with the first parameter; false otherwise.

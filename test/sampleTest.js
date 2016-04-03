@@ -1,5 +1,5 @@
 import test from 'ava'
-import RS from '../lib/'
+import RS from '../lib/ramdasauce'
 import R from 'ramda'
 
 test('sample', (t) => {

@@ -3,7 +3,7 @@ const babel = require('gulp-babel')
 const rollup = require('gulp-rollup')
 
 gulp.task('build', () => {
-  return gulp.src('lib/index.js')
+  return gulp.src('lib/ramdasauce.js')
     .pipe(rollup({}))
     .pipe(babel({
       presets: ['es2015', 'stage-2']

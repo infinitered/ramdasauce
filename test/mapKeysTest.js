@@ -1,6 +1,6 @@
 import test from 'ava'
 import R from 'ramda'
-import RS from '../lib/'
+import RS from '../lib/ramdasauce'
 
 test('mapKeys', (t) => {
   const old = {a: 1, b: 2}

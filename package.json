@@ -1,9 +1,12 @@
 {
   "name": "ramdasauce",
   "version": "0.1.0",
-  "description": "Utilities for ramda.",
-  "repository": "skellock/ramdasauce",
-  "main": "lib/index.js",
+  "description": "Utilities for Ramda.",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/skellock/ramdasauce.git"
+  },
+  "main": "./dist/ramdasauce.js",
   "scripts": {
     "test": "ava",
     "docs": "node_modules/.bin/jsdoc --configure .jsdoc.json",
@@ -12,12 +15,10 @@
   },
   "keywords": [
     "ramda",
-    "sauce"
+    "sauce",
+    "utilities"
   ],
-  "author": {
-    "name": "Steve Kellock",
-    "email": "steve@kellock.ca"
-  },
+  "author": "Steve Kellock <steve@kellock.ca>",
   "license": "MIT",
   "files": [
     "dist/index.js"
@@ -35,7 +36,8 @@
     "gulp-babel": "^6.1.2",
     "gulp-rollup": "^1.8.0",
     "jsdoc": "^3.4.0",
-    "rollup": "^0.25.7"
+    "rollup": "^0.25.7",
+    "xyz": "^0.5.0"
   },
   "ava": {
     "require": [

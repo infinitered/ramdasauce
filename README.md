@@ -1,16 +1,17 @@
 # Ramdasauce
 
-Adds a few utilities based on the delicious [Ramda.js](http://ramdajs.com/) library.
+Adds a few utilities based on the delicious [Ramda](http://ramdajs.com/) library.
 
-* Depends on `ramda 0.20.1+`.
-* Targets ES5.
-* Built with ES6.
+[![npm module](https://badge.fury.io/js/ramdasauce.svg)](https://www.npmjs.org/package/ramdasauce)
 
 
 # Installing
 
 `npm i ramdasauce --save`
 
+* Depends on `ramda 0.20.1+`.
+* Targets ES5.
+* Built with ES6.
 
 # Usage
 
@@ -50,6 +51,7 @@ RS.log('x')                 // logs and returns the parameter
 RS.trace('x', 1)            // logs the 1st param and returns the 2nd
 ```
 
+
 # Tips For Debugging
 ```js
 import R from 'ramda'
@@ -68,6 +70,7 @@ R.pipe(
   R.toLower
 )('HI') //=> 'hi'
 ```
+
 
 # Prior Art
 
@@ -105,4 +108,10 @@ RS.yearsForAnimalInAsianCalendars('monkey')
 
 # Feedback
 
-Do you have any common `ramda` patterns?
+Do you have any common `ramda` patterns you use frequently?  Drop some issues or PRs in!
+
+
+# Release Notes
+
+### 1.0.0 - April 3rd, 2016
+* Initial Release

@@ -4,7 +4,7 @@ test('nothing', (t) => {
   t.ok('turned off due to extreme guilt and shame')
 })
 
-// import Ramdasauce, { R } from '../lib/index'
+// import Ramdasauce, { R } from '../lib/ramdasauce'
 //
 // test('includes a polluted version of Ramda', (t) => {
 //   t.ok(R.equals)
