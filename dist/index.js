@@ -144,6 +144,23 @@ var random = function random(min, max) {
   return Math.floor(Math.random() * (max - min + 1)) + min;
 };
 
+/**
+ * Given a array, grabs 1 random item out.
+ *
+ * @since v0.1.0
+ * @return {*} A random item in the list.
+ * @example
+ * RS.sample([8,6,7,5,3,0,9]) //=> Maybe 6?  Maybe 9?  Feel lucky?
+ */
+var sample = function sample(list) {
+  if (_ramda2.default.isNil(list) || _ramda2.default.isEmpty(list)) {
+    return null;
+  }
+  var min = 0;
+  var max = list.length - 1;
+  return list[random(min, max)];
+};
+
 var Ramdasauce = {
   log: log,
   trace: trace,
@@ -151,7 +168,8 @@ var Ramdasauce = {
   toDate: toDate,
   within: within,
   eqLength: eqLength,
-  random: random
+  random: random,
+  sample: sample
 };
 
 // but, provide a polluted version of ramda for convenience

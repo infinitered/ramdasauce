@@ -42,6 +42,7 @@ RS.eqLength([1,2,3], 'abc') // tests 2 things to see if their length properties 
 RS.log('x')                 // logs and returns the parameter
 RS.trace('x', 1)            // logs the 1st param and returns the 2nd
 RS.random(68, 70)           // a random number from the min to the max included
+RS.sample(['red', 'blue'])  // picks a random item from a list
 ```
 
 A few notes about log & trace.
