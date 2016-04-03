@@ -24,8 +24,9 @@ RS.toDate(0)                // a Number to a date Object
 RS.toNumber('5')            // a String to a Number
 
 // --- Object Shenanigans ---
-const x = {a: 1, b: 2}
+const x = {a: 1, b: 2, c: {x: [5, 6]}}
 RS.mapKeys(R.toUpper, x)    // transforms the keys of an object by the function
+RS.dotPath('c.x.0')         // fetches a value from a nested object by a string path
 
 // --- Generating Things ---
 RS.rangeStep(2, 2, 10)      // generates a range of numbers with a step

@@ -253,6 +253,23 @@ var rangeStep = _ramda2.default.curry(function (step, start, stop) {
   }, _ramda2.default.range(0, 1 + (stop - start) / step >>> 0));
 });
 
+/**
+ * Fishes out a deep property from an object by
+ * a string path.
+ *
+ * @since v0.1.0
+ * @param {stringPath} (String) A path with dots in them.
+ * @param {y} (Object) The 2nd thing to compare.
+ * @return {*} The value found at the path; otherwise undefined
+ * @example
+ * const obj = {a: {b: {c: [1,2,3]}}}
+ * RS.dotPath('a.b.c.1', obj) //=> 2
+ */
+var dotPath = _ramda2.default.curry(function (stringPath, obj) {
+  var path = _ramda2.default.split('.', stringPath);
+  return _ramda2.default.path(path, obj);
+});
+
 var Ramdasauce = {
   log: log,
   trace: trace,
@@ -267,7 +284,8 @@ var Ramdasauce = {
   isNotNil: isNotNil,
   isUndefined: isUndefined,
   mapKeys: mapKeys,
-  rangeStep: rangeStep
+  rangeStep: rangeStep,
+  dotPath: dotPath
 };
 
 exports.default = Ramdasauce;
