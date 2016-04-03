@@ -230,6 +230,29 @@ var mapKeys = _ramda2.default.curry(function (fn, obj) {
   return _ramda2.default.pipe(_ramda2.default.toPairs, _ramda2.default.map(_ramda2.default.adjust(fn, 0)), _ramda2.default.fromPairs)(obj);
 });
 
+/**
+ * Generates a range of numbers.
+ *
+ * This function is curried.
+ *
+ * @since v0.1.0
+ * @sig Number a -> a -> a -> [a]
+ * @param {Number} (step) How much to step by.
+ * @param {Number} (start) Where to start.
+ * @param {Number} (stop) When to stop.
+ * @return {Array} The array of numbers
+ * @example
+ * RS.rangeStep(2, 2, 10) //=> [2, 4, 6, 8, 10]
+ */
+var rangeStep = _ramda2.default.curry(function (step, start, stop) {
+  if (step === 0) return null;
+  if (step > 0 && stop < start) return null;
+  if (step < 0 && stop > start) return null;
+  return _ramda2.default.map(function (n) {
+    return start + step * n;
+  }, _ramda2.default.range(0, 1 + (stop - start) / step >>> 0));
+});
+
 var Ramdasauce = {
   log: log,
   trace: trace,
@@ -243,7 +266,8 @@ var Ramdasauce = {
   isNilOrEmpty: isNilOrEmpty,
   isNotNil: isNotNil,
   isUndefined: isUndefined,
-  mapKeys: mapKeys
+  mapKeys: mapKeys,
+  rangeStep: rangeStep
 };
 
 exports.default = Ramdasauce;

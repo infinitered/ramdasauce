@@ -27,6 +27,9 @@ RS.toNumber('5')            // a String to a Number
 const x = {a: 1, b: 2}
 RS.mapKeys(R.toUpper, x)    // transforms the keys of an object by the function
 
+// --- Generating Things ---
+RS.rangeStep(2, 2, 10)      // generates a range of numbers with a step
+
 // --- Predicates ---
 RS.isUndefined(qwerty)      // check if something is undefined
 RS.isNotNil(null)           // check if something is not null or undefined
