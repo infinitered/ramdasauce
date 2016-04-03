@@ -130,13 +130,28 @@ var within = _ramda2.default.curry(function (min, max, value) {
  */
 var eqLength = _ramda2.default.eqProps('length');
 
+/**
+ * Generates a random number within the min and max range.
+ *
+ * @since v0.1.0
+ * @param {min} (Number) Minimum number to include.
+ * @param {max} (Number) Maximum number to include.
+ * @return {Number} The random number.
+ * @example
+ * RS.random(1, 2) //=> sometimes 1, sometimes 2
+ */
+var random = function random(min, max) {
+  return Math.floor(Math.random() * (max - min + 1)) + min;
+};
+
 var Ramdasauce = {
   log: log,
   trace: trace,
   toNumber: toNumber,
   toDate: toDate,
   within: within,
-  eqLength: eqLength
+  eqLength: eqLength,
+  random: random
 };
 
 // but, provide a polluted version of ramda for convenience
