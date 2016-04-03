@@ -3,7 +3,6 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.R = undefined;
 
 var _ramda = require('ramda');
 
@@ -247,8 +246,4 @@ var Ramdasauce = {
   mapKeys: mapKeys
 };
 
-// but, provide a polluted version of ramda for convenience
-var R$1 = _ramda2.default.merge(Ramdasauce, _ramda2.default);
-
-exports.R = R$1;
 exports.default = Ramdasauce;
