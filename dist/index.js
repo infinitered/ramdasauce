@@ -172,6 +172,17 @@ var sample = function sample(list) {
  */
 var isNilOrEmpty = _ramda2.default.anyPass([_ramda2.default.isNil, _ramda2.default.isEmpty]);
 
+/**
+ * Checks if something is not null or undefined.
+ *
+ * @since v0.1.0
+ * @param {*} (*) The thing to check.
+ * @return {Boolean} True if it is not nil; false otherwise.
+ * @example
+ * RS.isNotNil(null) //=> false
+ */
+var isNotNil = _ramda2.default.complement(_ramda2.default.isNil);
+
 var Ramdasauce = {
   log: log,
   trace: trace,
@@ -181,7 +192,8 @@ var Ramdasauce = {
   eqLength: eqLength,
   random: random,
   sample: sample,
-  isNilOrEmpty: isNilOrEmpty
+  isNilOrEmpty: isNilOrEmpty,
+  isNotNil: isNotNil
 };
 
 // but, provide a polluted version of ramda for convenience
