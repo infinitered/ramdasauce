@@ -24,6 +24,7 @@ RS.toDate(0)                // a Number to a date Object
 RS.toNumber('5')            // a String to a Number
 
 // --- Predicates ---
+RS.isUndefined(qwerty)      // check if something is undefined
 RS.isNotNil(null)           // check if something is not null or undefined
 RS.isNilOrEmpty(null)       // checks if something is null, undefined or R.isEmpty
 RS.within(1, 2, 2)          // is the 3rd parameter within the range of 1st through 2nd?

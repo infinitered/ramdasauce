@@ -183,6 +183,19 @@ var isNilOrEmpty = _ramda2.default.anyPass([_ramda2.default.isNil, _ramda2.defau
  */
 var isNotNil = _ramda2.default.complement(_ramda2.default.isNil);
 
+/**
+ * Checks if something is undefined.
+ *
+ * @since v0.1.0
+ * @param {*} (*) The thing to check.
+ * @return {Boolean} True if it is undefined; false otherwise.
+ * @example
+ * RS.isUndefined(asdf) //=> false
+ */
+var isUndefined = function isUndefined(x) {
+  return typeof x === 'undefined';
+};
+
 var Ramdasauce = {
   log: log,
   trace: trace,
@@ -193,7 +206,8 @@ var Ramdasauce = {
   random: random,
   sample: sample,
   isNilOrEmpty: isNilOrEmpty,
-  isNotNil: isNotNil
+  isNotNil: isNotNil,
+  isUndefined: isUndefined
 };
 
 // but, provide a polluted version of ramda for convenience
