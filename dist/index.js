@@ -217,6 +217,20 @@ var isUndefined = function isUndefined(x) {
   return typeof x === 'undefined';
 };
 
+/**
+ * Transforms the keys of an object with a function.
+ *
+ * @since v0.1.0
+ * @param {fn} (Function) The function to apply to the keys.
+ * @param {obj} (Object) The object to operate on.
+ * @return {Object} A new and improved object with SUPER KEYS!!!
+ * @example
+ * RS.mapKeys(R.toUpper, {a: 1}) //=> {A: 1}
+ */
+var mapKeys = _ramda2.default.curry(function (fn, obj) {
+  return _ramda2.default.pipe(_ramda2.default.toPairs, _ramda2.default.map(_ramda2.default.adjust(fn, 0)), _ramda2.default.fromPairs)(obj);
+});
+
 var Ramdasauce = {
   log: log,
   trace: trace,
@@ -229,7 +243,8 @@ var Ramdasauce = {
   sample: sample,
   isNilOrEmpty: isNilOrEmpty,
   isNotNil: isNotNil,
-  isUndefined: isUndefined
+  isUndefined: isUndefined,
+  mapKeys: mapKeys
 };
 
 // but, provide a polluted version of ramda for convenience
