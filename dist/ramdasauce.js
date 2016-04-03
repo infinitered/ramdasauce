@@ -318,4 +318,10 @@ var Ramdasauce = {
   endsWith: endsWith
 };
 
+module.exports = Ramdasauce;
+
+// DANGER ---
+// but, provide a polluted version of ramda for convenience
+// export const R = Ramda.merge(Ramdasauce, Ramda)
+
 exports.default = Ramdasauce;
