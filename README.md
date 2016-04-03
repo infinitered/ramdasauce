@@ -20,7 +20,7 @@ Here's the quick list of functions and a simple example.
 import RS from 'ramdasauce'
 
 // --- Conversions ---
-RS.toDate(0)                // a Number to a date Object
+RS.toDate(1e12)             // a Number to a date Object
 RS.toNumber('5')            // a String to a Number
 
 // --- Object Shenanigans ---
