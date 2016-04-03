@@ -1,5 +1,5 @@
 import test from 'ava'
-import RamdaSauce, { R } from '../lib/index'
+import Ramdasauce, { R } from '../lib/index'
 
 test('includes a polluted version of Ramda', (t) => {
   t.ok(R.equals)
@@ -8,7 +8,7 @@ test('includes a polluted version of Ramda', (t) => {
 })
 
 test('the default export is not polluted', (t) => {
-  t.notOk(RamdaSauce.equals)
-  t.notOk(RamdaSauce.pipe)
-  t.notOk(RamdaSauce.__)
+  t.notOk(Ramdasauce.equals)
+  t.notOk(Ramdasauce.pipe)
+  t.notOk(Ramdasauce.__)
 })

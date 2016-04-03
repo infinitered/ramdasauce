@@ -1,30 +1,30 @@
-# RamdaSauce
+# Ramdasauce
 
 Adds a few utilities on the delicious [Ramda.js](http://ramdajs.com/) library.
 
 
 # Installing
 
-`npm install ramda-sauce --save`
+`npm install ramdasauce --save`
 
 
 # Getting Started
 
-RamdaSauce is distributed as an ES5 library, but I'll show you the examples here in ES(6|2015) format.
+Ramdasauce is distributed as an ES5 library, but I'll show you the examples here in ES(6|2015) format.
 
 ```js
-import RS from 'ramda-sauce'
+import RS from 'ramdasauce'
 ```
 
 # Getting Started - The Reckless Way
 
-An alternative way if you want to continue to use `R.` is to import RamdaSauce in the dirty way.
+An alternative way if you want to continue to use `R.` is to import Ramdasauce in the dirty way.
 
 ```js
-import {R} from 'ramda-sauce'
+import {R} from 'ramdasauce'
 ```
 
-The polluted version merges Ramda into RamdaSauce so you can continue to use `R.newThings`.
+The polluted version merges Ramda into Ramdasauce so you can continue to use `R.newThings`.
 
 NOTE: Although this isn't monkey-patching, it makes me feel a bit dirty like it were.  Jury is out on this one.  I'd love to hear some feedback.
 
@@ -33,7 +33,7 @@ NOTE: Although this isn't monkey-patching, it makes me feel a bit dirty like it 
 Here's the quick list of functions and a simple example.
 
 ```js
-import RS from 'ramda-sauce'
+import RS from 'ramdasauce'
 
 RS.toDate(0)                // a Number to a date Object
 RS.toNumber('5')            // a String to a Number
@@ -46,7 +46,7 @@ RS.trace('x', 1)            // logs the 1st param and returns the 2nd
 A few notes about log & trace.
 ```js
 import R from 'ramda'
-import RS from 'ramda-sauce'
+import RS from 'ramdasauce'
 
 // NOTE: impure because they write to the console... but
 // check this out:

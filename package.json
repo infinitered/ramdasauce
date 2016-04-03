@@ -1,8 +1,8 @@
 {
-  "name": "ramda-sauce",
+  "name": "ramdasauce",
   "version": "0.1.0",
   "description": "Utilities for ramda.",
-  "repository": "skellock/ramda-sauce",
+  "repository": "skellock/ramdasauce",
   "main": "lib/index.js",
   "scripts": {
     "test": "ava",

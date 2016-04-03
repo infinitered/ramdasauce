@@ -130,7 +130,7 @@ var within = _ramda2.default.curry(function (min, max, value) {
  */
 var eqLength = _ramda2.default.eqProps('length');
 
-var RamdaSauce = {
+var Ramdasauce = {
   log: log,
   trace: trace,
   toNumber: toNumber,
@@ -140,7 +140,7 @@ var RamdaSauce = {
 };
 
 // but, provide a polluted version of ramda for convenience
-var R$1 = _ramda2.default.merge(RamdaSauce, _ramda2.default);
+var R$1 = _ramda2.default.merge(Ramdasauce, _ramda2.default);
 
 exports.R = R$1;
-exports.default = RamdaSauce;
+exports.default = Ramdasauce;
