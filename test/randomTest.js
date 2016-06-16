@@ -3,5 +3,5 @@ import RS from '../lib/ramdasauce'
 
 // YIKES, how am I going to test this impure function?
 test('random', (t) => {
-  t.same(RS.random(3, 3), 3)
+  t.deepEqual(RS.random(3, 3), 3)
 })

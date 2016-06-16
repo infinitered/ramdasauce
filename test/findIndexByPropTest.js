@@ -7,5 +7,5 @@ test('findIndexByProp', (t) => {
   const array = [obj1, obj2]
   t.is(RS.findIndexByProp('uuid', '123', array), 0)
   t.is(RS.findIndexByProp('name', 'Sam', array), 1)
-  t.is(RS.findIndexByProp('age', '55', array), null)
+  t.is(RS.findIndexByProp('age', '55', array), -1)
 })

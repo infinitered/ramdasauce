@@ -7,5 +7,5 @@ test('findByProp', (t) => {
   const array = [obj1, obj2]
   t.is(RS.findByProp('uuid', '123', array), obj1)
   t.is(RS.findByProp('name', 'Sam', array), obj2)
-  t.is(RS.findByProp('age', '55', array), null)
+  t.falsy(RS.findByProp('age', '55', array))
 })
