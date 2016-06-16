@@ -5,5 +5,5 @@ import RS from '../lib/ramdasauce'
 test('mapKeys', (t) => {
   const old = {a: 1, b: 2}
   const upgrade = RS.mapKeys(R.toUpper, old)
-  t.same(upgrade, {A: 1, B: 2})
+  t.deepEqual(upgrade, {A: 1, B: 2})
 })

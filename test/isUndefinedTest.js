@@ -3,8 +3,8 @@ import RS from '../lib/ramdasauce'
 
 test('isNilOrEmpty', (t) => {
   const x = undefined
-  t.ok(RS.isUndefined(x))
-  t.ok(RS.isUndefined())
-  t.notOk(RS.isUndefined(null))
-  t.notOk(RS.isUndefined('5'))
+  t.truthy(RS.isUndefined(x))
+  t.truthy(RS.isUndefined())
+  t.falsy(RS.isUndefined(null))
+  t.falsy(RS.isUndefined('5'))
 })
