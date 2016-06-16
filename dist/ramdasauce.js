@@ -298,6 +298,36 @@ var endsWith = _ramda2.default.curry(function (subString, fullString) {
   return _ramda2.default.equals(subString, _ramda2.default.takeLast(_ramda2.default.length(subString), fullString));
 });
 
+/**
+ * Finds an object in an array by the given property and value.
+ *
+ * @since v1.0.1
+ * @param {prop} (String) The prop to search by.
+ * @param {value} (String) The string to search for.
+ * @param {source} (Array) The array to search in.
+ * @return {Object} The object that matches the search or null if not found.
+ * @example
+ * RS.findByProp('id', 'a', [{id: 'a', id: 'b'}]) //=> {id: 'a'}
+ */
+var findByProp = _ramda2.default.curry(function (prop, value, source) {
+  return _ramda2.default.find(_ramda2.default.propEq(prop, value))(source);
+});
+
+/**
+ * Finds the index of an object in an array by the given property and value.
+ *
+ * @since v1.0.1
+ * @param {prop} (String) The prop to search by.
+ * @param {value} (String) The string to search for.
+ * @param {source} (Array) The array to search in.
+ * @return {Integer} The index of the object that matches the search or -1 if not found.
+ * @example
+ * RS.findIndexByProp('id', 'a', [{id: 'a', id: 'b'}]) //=> 0
+ */
+var findIndexByProp = _ramda2.default.curry(function (prop, value, source) {
+  return _ramda2.default.findIndex(_ramda2.default.propEq(prop, value))(source);
+});
+
 var Ramdasauce = {
   log: log,
   trace: trace,
@@ -315,7 +345,9 @@ var Ramdasauce = {
   rangeStep: rangeStep,
   dotPath: dotPath,
   startsWith: startsWith,
-  endsWith: endsWith
+  endsWith: endsWith,
+  findByProp: findByProp,
+  findIndexByProp: findIndexByProp
 };
 
 module.exports = Ramdasauce;
