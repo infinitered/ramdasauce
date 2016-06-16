@@ -9,7 +9,7 @@ Adds a few utilities based on the delicious [Ramda](http://ramdajs.com/) library
 
 `npm i ramdasauce --save`
 
-* Depends on `ramda 0.20.1+`.
+* Depends on `ramda 0.21.+`.
 * Targets ES5.
 * Built with ES6.
 
@@ -31,6 +31,10 @@ RS.dotPath('c.x.0', x)      // fetches a value from a nested object by a string 
 
 // --- Generating Things ---
 RS.rangeStep(2, 2, 10)      // generates a range of numbers with a step
+
+// --- Finding Things ---
+RS.findByProp('id', 'a', [{id: 'a', id: 'b'}])      // finds an object by propEq
+RS.findIndexByProp('id', 'a', [{id: 'a', id: 'b'}]) // finds the index of an object by propEq
 
 // --- Predicates ---
 RS.isUndefined(qwerty)      // check if something is undefined
@@ -112,6 +116,11 @@ Do you have any common `ramda` patterns you use frequently?  Drop some issues or
 
 
 # Release Notes
+
+### 1.1.0 - June 16th, 2016
+* Adds findByProp & findIndexByProp - [@kevinvangelder](https://github.com/kevinvangelder)
+* Fixes test environment - [@skellock](https://github.com/skellock) [@kevinvangelder](https://github.com/kevinvangelder)
+* Bumped dependencies
 
 ### 1.0.0 - April 3rd, 2016
 * Initial Release
