@@ -1,14 +1,8 @@
 'use strict';
 
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
+function _interopDefault (ex) { return (ex && (typeof ex === 'object') && 'default' in ex) ? ex['default'] : ex; }
 
-var _ramda = require('ramda');
-
-var _ramda2 = _interopRequireDefault(_ramda);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+var R = _interopDefault(require('ramda'));
 
 /**
  * Prints the parameter to console.log.
@@ -27,10 +21,10 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
  *  R.toLower
  * )('HI') //=> 'hi!!'
  */
-var log = function log(x) {
+var log = (function (x) {
   console.log(x);
   return x;
-};
+})
 
 /**
  * Prints a message to console.log but returns the value
@@ -53,7 +47,7 @@ var log = function log(x) {
  *    R.toLower
  *  )('HI') //=> 'hi'
  */
-var trace = _ramda2.default.curry(function (message, x) {
+var trace = R.curry(function (message, x) {
   console.log(message);
   return x;
 });
@@ -71,7 +65,7 @@ var trace = _ramda2.default.curry(function (message, x) {
  * @example
  * RS.toNumber('7') //=> 7
  */
-var toNumber = _ramda2.default.cond([[_ramda2.default.isNil, _ramda2.default.identity], [_ramda2.default.is(Number), _ramda2.default.identity], [_ramda2.default.T, function (x) {
+var toNumber = R.cond([[R.isNil, R.identity], [R.is(Number), R.identity], [R.T, function (x) {
   return Number(x);
 }]]);
 
@@ -86,12 +80,12 @@ var toNumber = _ramda2.default.cond([[_ramda2.default.isNil, _ramda2.default.ide
  */
 // converts something to a Date
 var toDate = function toDate(number) {
-  return _ramda2.default.cond([[_ramda2.default.isNil, _ramda2.default.identity], [_ramda2.default.is(Object), _ramda2.default.identity], [_ramda2.default.T, function (x) {
+  return R.cond([[R.isNil, R.identity], [R.is(Object), R.identity], [R.T, function (x) {
     return new Date(x);
   }]])(number);
 };
 
-var isNumber = _ramda2.default.is(Number);
+var isNumber = R.is(Number);
 
 /**
  * Given a min and max, determines if the value is included
@@ -111,8 +105,8 @@ var isNumber = _ramda2.default.is(Number);
  * RS.isWithin(1, 5, 5) //=> true
  * RS.isWithin(1, 5, 5.1) //=> false
  */
-var isWithin = _ramda2.default.curry(function (min, max, value) {
-  return isNumber(min) && isNumber(max) && isNumber(value) && _ramda2.default.gte(value, min) && _ramda2.default.gte(max, value);
+var isWithin = R.curry(function (min, max, value) {
+  return isNumber(min) && isNumber(max) && isNumber(value) && R.gte(value, min) && R.gte(max, value);
 });
 
 /**
@@ -134,7 +128,7 @@ var isWithin = _ramda2.default.curry(function (min, max, value) {
  * RS.isNotWithin(1, 5, 5.1) //=> true
  */
 // export default R.curry((min, max, value) => R.complement(isWithin(min, max, value)))
-var isNotWithin = _ramda2.default.complement(isWithin);
+var isNotWithin = R.complement(isWithin);
 
 /**
  * Compares two objects to see if their length
@@ -148,7 +142,7 @@ var isNotWithin = _ramda2.default.complement(isWithin);
  * RS.eqLength([], []) //=> true
  * RS.eqLength({length: 2}, 'ab') //=> true
  */
-var eqLength = _ramda2.default.eqProps('length');
+var eqLength = R.eqProps('length');
 
 /**
  * Generates a random number within the min and max range.
@@ -173,7 +167,7 @@ var random = function random(min, max) {
  * RS.sample([8,6,7,5,3,0,9]) //=> Maybe 6?  Maybe 9?  Feel lucky?
  */
 var sample = function sample(list) {
-  if (_ramda2.default.isNil(list) || _ramda2.default.isEmpty(list)) {
+  if (R.isNil(list) || R.isEmpty(list)) {
     return null;
   }
   var min = 0;
@@ -190,7 +184,7 @@ var sample = function sample(list) {
  * @example
  * RS.isNilOrEmpty() //=> true
  */
-var isNilOrEmpty = _ramda2.default.anyPass([_ramda2.default.isNil, _ramda2.default.isEmpty]);
+var isNilOrEmpty = R.anyPass([R.isNil, R.isEmpty]);
 
 /**
  * Checks if something is not null or undefined.
@@ -201,7 +195,7 @@ var isNilOrEmpty = _ramda2.default.anyPass([_ramda2.default.isNil, _ramda2.defau
  * @example
  * RS.isNotNil(null) //=> false
  */
-var isNotNil = _ramda2.default.complement(_ramda2.default.isNil);
+var isNotNil = R.complement(R.isNil);
 
 /**
  * Checks if something is undefined.
@@ -226,8 +220,8 @@ var isUndefined = function isUndefined(x) {
  * @example
  * RS.mapKeys(R.toUpper, {a: 1}) //=> {A: 1}
  */
-var mapKeys = _ramda2.default.curry(function (fn, obj) {
-  return _ramda2.default.pipe(_ramda2.default.toPairs, _ramda2.default.map(_ramda2.default.adjust(fn, 0)), _ramda2.default.fromPairs)(obj);
+var mapKeys = R.curry(function (fn, obj) {
+  return R.pipe(R.toPairs, R.map(R.adjust(fn, 0)), R.fromPairs)(obj);
 });
 
 /**
@@ -244,13 +238,13 @@ var mapKeys = _ramda2.default.curry(function (fn, obj) {
  * @example
  * RS.rangeStep(2, 2, 10) //=> [2, 4, 6, 8, 10]
  */
-var rangeStep = _ramda2.default.curry(function (step, start, stop) {
+var rangeStep = R.curry(function (step, start, stop) {
   if (step === 0) return null;
   if (step > 0 && stop < start) return null;
   if (step < 0 && stop > start) return null;
-  return _ramda2.default.map(function (n) {
+  return R.map(function (n) {
     return start + step * n;
-  }, _ramda2.default.range(0, 1 + (stop - start) / step >>> 0));
+  }, R.range(0, 1 + (stop - start) / step >>> 0));
 });
 
 /**
@@ -265,9 +259,9 @@ var rangeStep = _ramda2.default.curry(function (step, start, stop) {
  * const obj = {a: {b: {c: [1,2,3]}}}
  * RS.dotPath('a.b.c.1', obj) //=> 2
  */
-var dotPath = _ramda2.default.curry(function (stringPath, obj) {
-  var path = _ramda2.default.split('.', stringPath);
-  return _ramda2.default.path(path, obj);
+var dotPath = R.curry(function (stringPath, obj) {
+  var path = R.split('.', stringPath);
+  return R.path(path, obj);
 });
 
 /**
@@ -280,8 +274,8 @@ var dotPath = _ramda2.default.curry(function (stringPath, obj) {
  * @example
  * RS.startsWith('h', 'hello') //=> true
  */
-var startsWith = _ramda2.default.curry(function (subString, fullString) {
-  return _ramda2.default.equals(subString, _ramda2.default.take(_ramda2.default.length(subString), fullString));
+var startsWith = R.curry(function (subString, fullString) {
+  return R.equals(subString, R.take(R.length(subString), fullString));
 });
 
 /**
@@ -294,8 +288,8 @@ var startsWith = _ramda2.default.curry(function (subString, fullString) {
  * @example
  * RS.endsWith('o', 'hello') //=> true
  */
-var endsWith = _ramda2.default.curry(function (subString, fullString) {
-  return _ramda2.default.equals(subString, _ramda2.default.takeLast(_ramda2.default.length(subString), fullString));
+var endsWith = R.curry(function (subString, fullString) {
+  return R.equals(subString, R.takeLast(R.length(subString), fullString));
 });
 
 /**
@@ -309,8 +303,8 @@ var endsWith = _ramda2.default.curry(function (subString, fullString) {
  * @example
  * RS.findByProp('id', 'a', [{id: 'a', id: 'b'}]) //=> {id: 'a'}
  */
-var findByProp = _ramda2.default.curry(function (prop, value, source) {
-  return _ramda2.default.find(_ramda2.default.propEq(prop, value))(source);
+var findByProp = R.curry(function (prop, value, source) {
+  return R.find(R.propEq(prop, value))(source);
 });
 
 /**
@@ -324,8 +318,8 @@ var findByProp = _ramda2.default.curry(function (prop, value, source) {
  * @example
  * RS.findIndexByProp('id', 'a', [{id: 'a', id: 'b'}]) //=> 0
  */
-var findIndexByProp = _ramda2.default.curry(function (prop, value, source) {
-  return _ramda2.default.findIndex(_ramda2.default.propEq(prop, value))(source);
+var findIndexByProp = R.curry(function (prop, value, source) {
+  return R.findIndex(R.propEq(prop, value))(source);
 });
 
 var Ramdasauce = {
@@ -356,4 +350,4 @@ module.exports = Ramdasauce;
 // but, provide a polluted version of ramda for convenience
 // export const R = Ramda.merge(Ramdasauce, Ramda)
 
-exports.default = Ramdasauce;
+module.exports = Ramdasauce;
