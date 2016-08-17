@@ -117,6 +117,9 @@ Do you have any common `ramda` patterns you use frequently?  Drop some issues or
 
 # Release Notes
 
+### 1.1.1 - August 17th, 2016
+* Bumped dependencies - [@skellock](https://github.com/skellock) ([#5](https://github.com/skellock/ramdasauce/pull/5))
+
 ### 1.1.0 - June 16th, 2016
 * Adds findByProp & findIndexByProp - [@kevinvangelder](https://github.com/kevinvangelder)
 * Fixes test environment - [@skellock](https://github.com/skellock) [@kevinvangelder](https://github.com/kevinvangelder)
