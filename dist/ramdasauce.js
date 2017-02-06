@@ -24,7 +24,7 @@ var R = _interopDefault(require('ramda'));
 var log = (function (x) {
   console.log(x);
   return x;
-})
+});
 
 /**
  * Prints a message to console.log but returns the value
@@ -85,8 +85,6 @@ var toDate = function toDate(number) {
   }]])(number);
 };
 
-var isNumber = R.is(Number);
-
 /**
  * Given a min and max, determines if the value is included
  * in the range.
@@ -106,6 +104,7 @@ var isNumber = R.is(Number);
  * RS.isWithin(1, 5, 5.1) //=> false
  */
 var isWithin = R.curry(function (min, max, value) {
+  var isNumber = R.is(Number);
   return isNumber(min) && isNumber(max) && isNumber(value) && R.gte(value, min) && R.gte(max, value);
 });
 
