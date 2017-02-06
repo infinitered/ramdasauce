@@ -26,21 +26,21 @@
     "dist/index.js"
   ],
   "dependencies": {
-    "ramda": "^0.22.1"
+    "ramda": "^0.23.0"
   },
   "devDependencies": {
-    "ava": "^0.16.0",
+    "ava": "^0.18.1",
     "babel-cli": "^6.11.4",
     "babel-plugin-transform-runtime": "^6.12.0",
     "babel-preset-es2015": "^6.13.2",
-    "babel-preset-es2015-rollup": "^1.2.0",
+    "babel-preset-es2015-rollup": "^3.0.0",
     "babel-preset-stage-2": "^6.13.0",
     "docdash": "^0.4.0",
     "jsdoc": "^3.4.0",
-    "nyc": "^8.1.0",
-    "rollup": "^0.34.9",
+    "nyc": "^10.1.2",
+    "rollup": "^0.41.4",
     "rollup-plugin-babel": "^2.6.1",
-    "xyz": "^1.0.0"
+    "xyz": "^2.1.0"
   },
   "ava": {
     "require": [
