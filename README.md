@@ -119,7 +119,7 @@ Do you have any common `ramda` patterns you use frequently?  Drop some issues or
 
 ### 1.2.0 - February 6, 2017
 * Updates `isWithin` to play nice with Webpack - @hubciorz (#7)
-* Bumped dependencies - [@skellock](https://github.com/skellock) ([#5](https://github.com/skellock/ramdasauce/pull/5))
+* Bumped dependencies - @skellock (#8)
 
 ### 1.1.1 - August 17th, 2016
 * Bumped dependencies - [@skellock](https://github.com/skellock) ([#5](https://github.com/skellock/ramdasauce/pull/5))
