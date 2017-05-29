@@ -1,11 +1,12 @@
 import test from 'ava'
-import RS from '../lib/ramdasauce'
+import toDate from '../lib/toDate'
 
-test('toDate', (t) => {
-  t.deepEqual(RS.toDate(null), null)
-  t.deepEqual(RS.toDate(undefined), undefined)
+test('toDate', t => {
   const d = Date.UTC(2047, 4, 23, 1, 46, 40)
   const numberDate = Number(d)
-  const back = RS.toDate(numberDate)
+  const back = toDate(numberDate)
+
   t.deepEqual(Number(back), d)
+  t.deepEqual(toDate(null), null)
+  t.deepEqual(toDate(undefined), undefined)
 })

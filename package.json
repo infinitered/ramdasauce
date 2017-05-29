@@ -1,50 +1,52 @@
 {
-  "name": "ramdasauce",
-  "version": "1.2.0",
+  "author": "Steve Kellock <steve@kellock.ca>",
+  "ava": {
+    "require": [
+      "babel-register"
+    ]
+  },
+  "dependencies": {
+    "ramda": "^0.24.0"
+  },
   "description": "Utilities for Ramda.",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/skellock/ramdasauce.git"
+  "devDependencies": {
+    "ava": "^0.19.1",
+    "babel-core": "^6.24.1",
+    "babel-eslint": "^7.2.3",
+    "babel-preset-es2015": "^6.13.2",
+    "babel-preset-es2015-rollup": "^3.0.0",
+    "np": "^2.15.0",
+    "nyc": "^10.1.2",
+    "rollup": "^0.41.4",
+    "rollup-plugin-babel": "^2.6.1",
+    "rollup-plugin-filesize": "^1.3.2",
+    "rollup-plugin-ramda": "^1.0.5",
+    "rollup-plugin-uglify": "^2.0.1",
+    "standard": "^10.0.2"
   },
-  "main": "./dist/ramdasauce.js",
-  "scripts": {
-    "test": "ava",
-    "coverage": "nyc ava",
-    "dist": "npm run clean && npm run build && npm run docs",
-    "docs": "node_modules/.bin/jsdoc --configure .jsdoc.json",
-    "clean": "rm -rf dist docs",
-    "build": "BABEL_ENV=production rollup -c"
-  },
+  "files": [
+    "dist/index.js"
+  ],
   "keywords": [
     "ramda",
     "sauce",
     "utilities"
   ],
-  "author": "Steve Kellock <steve@kellock.ca>",
   "license": "MIT",
-  "files": [
-    "dist/index.js"
-  ],
-  "dependencies": {
-    "ramda": "^0.23.0"
+  "main": "./dist/ramdasauce.js",
+  "name": "ramdasauce",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/skellock/ramdasauce.git"
   },
-  "devDependencies": {
-    "ava": "^0.18.1",
-    "babel-cli": "^6.11.4",
-    "babel-plugin-transform-runtime": "^6.12.0",
-    "babel-preset-es2015": "^6.13.2",
-    "babel-preset-es2015-rollup": "^3.0.0",
-    "babel-preset-stage-2": "^6.13.0",
-    "docdash": "^0.4.0",
-    "jsdoc": "^3.4.0",
-    "nyc": "^10.1.2",
-    "rollup": "^0.41.4",
-    "rollup-plugin-babel": "^2.6.1",
-    "xyz": "^2.1.0"
+  "scripts": {
+    "build": "rm -rf dist && BABEL_ENV=production rollup -c",
+    "coverage": "nyc ava",
+    "lint": "standard lib/* test/* rollup.config.js",
+    "test": "ava"
   },
-  "ava": {
-    "require": [
-      "babel-core/register"
-    ]
-  }
+  "standard": {
+    "parser": "babel-eslint"
+  },
+  "version": "1.2.0"
 }

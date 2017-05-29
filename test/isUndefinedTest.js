@@ -1,10 +1,11 @@
 import test from 'ava'
-import RS from '../lib/ramdasauce'
+import isUndefined from '../lib/isUndefined'
 
-test('isNilOrEmpty', (t) => {
+test('isUndefined', (t) => {
   const x = undefined
-  t.truthy(RS.isUndefined(x))
-  t.truthy(RS.isUndefined())
-  t.falsy(RS.isUndefined(null))
-  t.falsy(RS.isUndefined('5'))
+
+  t.truthy(isUndefined(x))
+  t.truthy(isUndefined())
+  t.falsy(isUndefined(null))
+  t.falsy(isUndefined('5'))
 })

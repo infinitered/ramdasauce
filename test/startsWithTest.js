@@ -1,8 +1,8 @@
 import test from 'ava'
-import RS from '../lib/ramdasauce'
+import startsWith from '../lib/startsWith'
 
-test('startsWith', (t) => {
-  t.truthy(RS.startsWith('h', 'hi'))
-  t.truthy(RS.startsWith('hell', 'hello'))
-  t.falsy(RS.startsWith('.', 'hi'))
+test('startsWith', t => {
+  t.truthy(startsWith('h', 'hi'))
+  t.truthy(startsWith('hell', 'hello'))
+  t.falsy(startsWith('.', 'hi'))
 })

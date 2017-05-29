@@ -1,7 +1,7 @@
 import test from 'ava'
-import RS from '../lib/ramdasauce'
+import isWithin from '../lib/isWithin'
 
-const is200s = RS.isWithin(200, 299)
+const is200s = isWithin(200, 299)
 
 test('isWithin', (t) => {
   t.true(is200s(200))
@@ -11,5 +11,5 @@ test('isWithin', (t) => {
   t.false(is200s(299.1))
   t.false(is200s(300))
   t.false(is200s(null))
-  t.false(RS.isWithin(null, null, null))
+  t.false(isWithin(null, null, null))
 })

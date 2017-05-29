@@ -1,8 +1,11 @@
 import test from 'ava'
-import R from 'ramda'
-import RS from '../lib/ramdasauce'
+import { pipe, take, toLower } from 'ramda'
+import log from '../lib/log'
 
 test('log', (t) => {
-  const pipe = R.pipe(R.take(3), RS.log, R.toLower)
-  t.deepEqual(pipe('LOLOL'), 'lol')
+  console.log = () => {}
+
+  const p = pipe(take(3), log, toLower)
+
+  t.deepEqual(p('LOLOL'), 'lol')
 })
