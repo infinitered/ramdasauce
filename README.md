@@ -86,7 +86,7 @@ Do you have any common `ramda` patterns you use frequently?  Drop some issues or
 
 # Release Notes
 
-### 2.0.0 - ???
+### 2.0.0 - May 29, 2017
 * DEPRECATIONS: `startsWith` and `endsWith` are flagged for removal in 3.0.0 (ramda has these now)
 * DEPRECATIONS: `random` and `sample` are flagged for removal in 3.0.0 (impure functions)
 * DEPRECATIONS: `log` and `trace` are flagged for removal in 3.0.0 (impure debug functions)
