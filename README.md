@@ -9,7 +9,7 @@ Adds a few utilities based on the delicious [Ramda](http://ramdajs.com/) library
 
 `npm i ramdasauce --save`
 
-* Depends on `ramda 0.21.+`.
+* Depends on `ramda 0.24.+`.
 * Targets ES5.
 * Built with ES6.
 
@@ -43,38 +43,7 @@ RS.isNilOrEmpty(null)       // checks if something is null, undefined or R.isEmp
 RS.isWithin(1, 2, 2)        // is the 3rd parameter within the range of 1st through 2nd?
 RS.isNotWithin(1, 2, 100)   // is the 3rd parameter not within the range of 1st through 2nd?
 RS.eqLength([1,2,3], 'abc') // tests 2 things to see if their length properties are the same
-RS.startsWith('h', 'hi')    // does a string start with another string?
-RS.endsWith('i', 'hi')      // does a string end with another string?
-
-// --- Impure Randomness ---
-RS.random(68, 70)           // a random number from the min to the max included
-RS.sample(['red', 'blue'])  // picks a random item from a list
-
-// --- Impure Debugging Tools ---
-RS.log('x')                 // logs and returns the parameter
-RS.trace('x', 1)            // logs the 1st param and returns the 2nd
 ```
-
-
-# Tips For Debugging
-```js
-import R from 'ramda'
-import RS from 'ramdasauce'
-
-// NOTE: impure because they write to the console... but
-// check this out:
-R.pipe(
-  R.concat('!!')
-  RS.log,  // <-- prints 'HI!!' to your console
-  R.toLower
-)('HI') //=> 'hi!!'
-
-R.pipe(
-  RS.trace('here'),  // <-- print 'here' to the console
-  R.toLower
-)('HI') //=> 'hi'
-```
-
 
 # Prior Art
 
@@ -116,6 +85,13 @@ Do you have any common `ramda` patterns you use frequently?  Drop some issues or
 
 
 # Release Notes
+
+### 2.0.0 - ???
+* DEPRECATIONS: `startsWith` and `endsWith` are flagged for removal in 3.0.0 (ramda has these now)
+* DEPRECATIONS: `random` and `sample` are flagged for removal in 3.0.0 (impure functions)
+* DEPRECATIONS: `log` and `trace` are flagged for removal in 3.0.0 (impure debug functions)
+* Upgrades to ramda@24.0.0
+* updates build process for much smaller bundle sizes
 
 ### 1.2.0 - February 6, 2017
 * Updates `isWithin` to play nice with Webpack - @hubciorz (#7)

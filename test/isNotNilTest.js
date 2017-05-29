@@ -1,8 +1,8 @@
 import test from 'ava'
-import RS from '../lib/ramdasauce'
+import isNotNil from '../lib/isNotNil'
 
 test('isNotNil', (t) => {
-  t.truthy(RS.isNotNil(1))
-  t.falsy(RS.isNotNil(null))
-  t.falsy(RS.isNotNil(undefined))
+  t.truthy(isNotNil(1))
+  t.falsy(isNotNil(null))
+  t.falsy(isNotNil(undefined))
 })

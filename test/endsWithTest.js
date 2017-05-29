@@ -1,8 +1,8 @@
 import test from 'ava'
-import RS from '../lib/ramdasauce'
+import endsWith from '../lib/endsWith'
 
 test('endsWith', (t) => {
-  t.truthy(RS.endsWith('i', 'hi'))
-  t.truthy(RS.endsWith('ello', 'hello'))
-  t.falsy(RS.endsWith('.', 'hi'))
+  t.truthy(endsWith('i', 'hi'))
+  t.truthy(endsWith('ello', 'hello'))
+  t.falsy(endsWith('.', 'hi'))
 })

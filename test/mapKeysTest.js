@@ -1,9 +1,10 @@
 import test from 'ava'
-import R from 'ramda'
-import RS from '../lib/ramdasauce'
+import { toUpper } from 'ramda'
+import mapKeys from '../lib/mapKeys'
 
 test('mapKeys', (t) => {
   const old = {a: 1, b: 2}
-  const upgrade = RS.mapKeys(R.toUpper, old)
+  const upgrade = mapKeys(toUpper, old)
+
   t.deepEqual(upgrade, {A: 1, B: 2})
 })

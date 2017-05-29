@@ -1,8 +1,8 @@
 import test from 'ava'
-import RS from '../lib/ramdasauce'
+import eqLength from '../lib/eqLength'
 
 test('eqLength', (t) => {
-  t.truthy(RS.eqLength('a', 'b'))
-  t.truthy(RS.eqLength([], ''))
-  t.truthy(RS.eqLength({length: 2}, 'ab'))
+  t.truthy(eqLength('a', 'b'))
+  t.truthy(eqLength([], ''))
+  t.truthy(eqLength({length: 2}, 'ab'))
 })
