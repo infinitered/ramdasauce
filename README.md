@@ -86,6 +86,11 @@ Do you have any common `ramda` patterns you use frequently?  Drop some issues or
 
 # Release Notes
 
+### 2.1.0 - Aug 12, 2017
+* upgrades to ramda@24.0.1
+* bumped all dev dependencies
+* marked previous mentioned functions with @deprecated in their comments
+
 ### 2.0.0 - May 29, 2017
 * DEPRECATIONS: `startsWith` and `endsWith` are flagged for removal in 3.0.0 (ramda has these now)
 * DEPRECATIONS: `random` and `sample` are flagged for removal in 3.0.0 (impure functions)
