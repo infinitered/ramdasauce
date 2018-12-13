@@ -10,6 +10,7 @@
   },
   "description": "Utilities for Ramda.",
   "devDependencies": {
+    "@semantic-release/git": "^7.0.5",
     "ava": "^0.21.0",
     "babel-core": "^6.25.0",
     "babel-eslint": "^7.2.3",
@@ -22,6 +23,7 @@
     "rollup-plugin-filesize": "^1.4.2",
     "rollup-plugin-ramda": "^1.0.5",
     "rollup-plugin-uglify": "^2.0.1",
+    "semantic-release": "^15.12.5",
     "standard": "^10.0.3"
   },
   "files": [
@@ -43,10 +45,27 @@
     "build": "rm -rf dist && BABEL_ENV=production rollup -c",
     "coverage": "nyc ava",
     "lint": "standard lib/* test/* rollup.config.js",
-    "test": "ava"
+    "test": "ava",
+    "ci:publish": "yarn semantic-release",
+    "semantic-release": "semantic-release"
   },
   "standard": {
     "parser": "babel-eslint"
   },
-  "version": "2.1.0"
+  "version": "2.1.0",
+  "release": {
+    "plugins": [
+      "@semantic-release/commit-analyzer",
+      "@semantic-release/release-notes-generator",
+      "@semantic-release/npm",
+      "@semantic-release/github",
+      [
+        "@semantic-release/git",
+        {
+          "assets": "package.json",
+          "message": "chore(release): ${nextRelease.version} [skip ci]\n\n${nextRelease.notes}"
+        }
+      ]
+    ]
+  }
 }
