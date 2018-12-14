@@ -56,6 +56,9 @@ jobs:
               - v1-dependencies-{{ checksum "package.json" }}
               # fallback to using the latest cache if no exact match is found
               - v1-dependencies-
+        - run:
+            name: Build Lib
+            command: yarn build
         # Run semantic-release after all the above is set.
         - run:
             name: Publish to NPM
