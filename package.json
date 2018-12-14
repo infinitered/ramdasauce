@@ -27,7 +27,7 @@
     "standard": "^10.0.3"
   },
   "files": [
-    "dist/index.js"
+    "dist/ramdasauce.js"
   ],
   "keywords": [
     "ramda",
