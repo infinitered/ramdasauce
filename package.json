@@ -52,7 +52,7 @@
   "standard": {
     "parser": "babel-eslint"
   },
-  "version": "2.1.2",
+  "version": "2.1.3",
   "release": {
     "plugins": [
       "@semantic-release/commit-analyzer",
