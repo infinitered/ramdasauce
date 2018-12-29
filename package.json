@@ -2,7 +2,7 @@
   "name": "ramdasauce",
   "description": "Helper utilities for Ramda.",
   "dependencies": {
-    "ramda": "0.24.1"
+    "ramda": "^0.26.1"
   },
   "devDependencies": {
     "@semantic-release/git": "^7.0.5",
