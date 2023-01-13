@@ -1,3 +1,5 @@
+NOTE: this library is no longer maintained. 
+
 # Ramdasauce
 
 Adds a few utilities based on the delicious [Ramda](http://ramdajs.com/) library.
